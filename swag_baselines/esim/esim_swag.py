@@ -12,7 +12,8 @@ from allennlp.common import Params
 from allennlp.common.checks import check_dimensions_match
 from allennlp.data import Vocabulary
 from allennlp.models.model import Model
-from allennlp.modules import FeedForward, MatrixAttention
+from allennlp.modules import FeedForward
+from allennlp.modules.matrix_attention.legacy_matrix_attention import LegacyMatrixAttention
 from allennlp.modules import Seq2SeqEncoder, SimilarityFunction, TimeDistributed, TextFieldEmbedder
 from allennlp.modules.token_embedders import Embedding, ElmoTokenEmbedder
 from allennlp.nn import InitializerApplicator, RegularizerApplicator
@@ -94,7 +95,7 @@ class ESIM(Model):
         self._text_field_embedder = text_field_embedder
         self._encoder = encoder
 
-        self._matrix_attention = MatrixAttention(similarity_function)
+        self._matrix_attention = LegacyMatrixAttention(similarity_function)
         self._projection_feedforward = projection_feedforward
 
         self._inference_encoder = inference_encoder
