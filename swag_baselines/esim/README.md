@@ -9,7 +9,7 @@ allennlp train train-glove.json -s tmp/glove --include-package swag_baselines.es
 Once you've trained a model, you can run it with:
 
 ```
-allennlp predict tmp/glove/model.tar.gz ../../data/val.csv --cuda-device 0 --include-package swag_baselines.esim --output-file lol.csv
+python -m predict tmp/glove/model.tar.gz ../../data/val.csv --cuda-device 0 --include-package swag_baselines.esim --output-file lol.csv
 ```
 
 And you can verify the results with
