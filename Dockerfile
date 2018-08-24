@@ -33,4 +33,5 @@ ADD . .
 
 ENV PYTHONPATH /swagaf
 
-ENTRYPOINT [ "/bin/bash" ]
+ENTRYPOINT []
+CMD [ "/bin/bash" ]
